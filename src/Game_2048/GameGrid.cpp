@@ -1,9 +1,11 @@
+/*Author: Kechun Xu*/
+/*Created on 2019.6.2*/
 #include "GameGrid.h"
 
 //const int row[3] = { 4, 8, 16 };
 //const int col[3] = { 4, 8, 16 };
 
-//ÉÏÏÂ×óÓÒ
+//ä¸Šä¸‹å·¦å³
 extern const int ROW = 4;
 extern const int COL = 4;
 extern const int UP = 1;
@@ -11,7 +13,7 @@ extern const int DOWN = 2;
 extern const int LEFT = 3;
 extern const int RIGHT = 4;
 
-//ÓÎÏ·Ëù´¦µÄ×´Ì¬
+//æ¸¸æˆæ‰€å¤„çš„çŠ¶æ€
 extern const int GAME_OVER = 1;
 extern const int GAME_WIN = 2;
 extern const int GAME_CONTINUE = 3;
@@ -56,7 +58,7 @@ bool Game_Grid::CreateNum()
 	int y = -1;
 	int times = 0;
 	int maxTimes = ROW * COL;
-	//Èı·ÖÖ®¶şµÄ¸ÅÂÊÉú³É2£¬Èı·ÖÖ®Ò»µÄ¸ÅÂÊÉú³É4
+	//ä¸‰åˆ†ä¹‹äºŒçš„æ¦‚ç‡ç”Ÿæˆ2ï¼Œä¸‰åˆ†ä¹‹ä¸€çš„æ¦‚ç‡ç”Ÿæˆ4
 	int whitch = rand() % 3;
 	do
 	{
@@ -65,7 +67,7 @@ bool Game_Grid::CreateNum()
 		++times;
 	} while (game[x][y].num() != 0 && times <= maxTimes);
 
-	//ËµÃ÷¸ñ×ÓÒÑ¾­ÂúÁË
+	//è¯´æ˜æ ¼å­å·²ç»æ»¡äº†
 	if (times >= maxTimes)
 	{
 		return false;
@@ -115,7 +117,7 @@ void Game_Grid::up_cb()
 		{
 			for (int col = 0; col < COL; ++col)
 			{
-				//ÉÏÒ»¸ö¸ñ×ÓÎª¿Õ
+				//ä¸Šä¸€ä¸ªæ ¼å­ä¸ºç©º
 				if (game[crow - 1][col].num() == 0)
 				{
 					game[crow - 1][col].set_num(game[crow][col].num());
@@ -123,7 +125,7 @@ void Game_Grid::up_cb()
 				}
 				else
 				{
-					//ºÏ²¢
+					//åˆå¹¶
 					if (game[crow - 1][col].num() == game[crow][col].num())
 					{
 						game[crow - 1][col].set_num(game[crow - 1][col].num() * 2);
@@ -144,7 +146,7 @@ void Game_Grid::down_cb()
 		{
 			for (int col = 0; col < COL; ++col)
 			{
-				//ÉÏÒ»¸ö¸ñ×ÓÎª¿Õ
+				//ä¸Šä¸€ä¸ªæ ¼å­ä¸ºç©º
 				if (game[crow + 1][col].num() == 0)
 				{
 					game[crow + 1][col].set_num(game[crow][col].num());
@@ -152,7 +154,7 @@ void Game_Grid::down_cb()
 				}
 				else
 				{
-					//ºÏ²¢
+					//åˆå¹¶
 					if (game[crow + 1][col].num() == game[crow][col].num())
 					{
 						game[crow + 1][col].set_num(game[crow + 1][col].num() * 2);
@@ -172,7 +174,7 @@ void Game_Grid::left_cb()
 		{
 			for (int row = 0; row < ROW; ++row)
 			{
-				//ÉÏÒ»¸ö¸ñ×ÓÎª¿Õ
+				//ä¸Šä¸€ä¸ªæ ¼å­ä¸ºç©º
 				if (game[row][ccol - 1].num() == 0)
 				{
 					game[row][ccol - 1].set_num(game[row][ccol].num());
@@ -180,7 +182,7 @@ void Game_Grid::left_cb()
 				}
 				else
 				{
-					//ºÏ²¢
+					//åˆå¹¶
 					if (game[row][ccol - 1].num() == game[row][ccol].num())
 					{
 						game[row][ccol - 1].set_num(game[row][ccol - 1].num() * 2);
@@ -200,7 +202,7 @@ void Game_Grid::right_cb()
 		{
 			for (int row = 0; row < ROW; ++row)
 			{
-				//ÉÏÒ»¸ö¸ñ×ÓÎª¿Õ
+				//ä¸Šä¸€ä¸ªæ ¼å­ä¸ºç©º
 				if (game[row][ccol + 1].num() == 0)
 				{
 					game[row][ccol + 1].set_num(game[row][ccol].num());
@@ -208,7 +210,7 @@ void Game_Grid::right_cb()
 				}
 				else
 				{
-					//ºÏ²¢
+					//åˆå¹¶
 					if (game[row][ccol + 1].num() == game[row][ccol].num())
 					{
 						game[row][ccol + 1].set_num(game[row][ccol + 1].num() * 2);
@@ -223,7 +225,7 @@ void Game_Grid::right_cb()
 
 int Game_Grid::state()
 {
-	//Ó®µÃÓÎÏ·
+	//èµ¢å¾—æ¸¸æˆ
 	
 for (int i = 0; i < ROW; ++i)
 	{
@@ -237,7 +239,7 @@ for (int i = 0; i < ROW; ++i)
 		}
 	}
 
-	//ºáÏò¼ì²é
+	//æ¨ªå‘æ£€æŸ¥
 	for (int i = 0; i < ROW; ++i)
 	{
 		for (int j = 0; j < COL - 1; ++j)
@@ -249,7 +251,7 @@ for (int i = 0; i < ROW; ++i)
 			}
 		}
 	}
-	//×İÏò¼ì²é
+	//çºµå‘æ£€æŸ¥
 	for (int j = 0; j < COL; ++j)
 	{
 		for (int i = 0; i < ROW - 1; ++i)
@@ -262,7 +264,7 @@ for (int i = 0; i < ROW; ++i)
 		}
 	}
 
-	//²»·ûºÏÉÏÊöÁ½ÖÖ×´¿ö£¬ÓÎÏ·½áÊø
+	//ä¸ç¬¦åˆä¸Šè¿°ä¸¤ç§çŠ¶å†µï¼Œæ¸¸æˆç»“æŸ
 	return GAME_OVER;
 }
 
