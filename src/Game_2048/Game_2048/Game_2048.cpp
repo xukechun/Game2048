@@ -1,3 +1,5 @@
+/*Author: Kechun Xu*/
+/*Created on 2019.6.2*/
 #include <iostream>
 #include "Gamegraph.h"
 #include <FL/Fl_JPEG_Image.H>
@@ -14,7 +16,7 @@ void callback(void*)
 {
 	useTime++;
 	//cout << "time:" << useTime << endl;
-	if (useTime > 10000)//·ÅÖÃÒç³ö
+	if (useTime > 10000)//Â·Ã…Ã–ÃƒÃ’Ã§Â³Ã¶
 	{
 		useTime = 0;
 	}
