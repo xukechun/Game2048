@@ -1,3 +1,5 @@
+/*Author: Kechun Xu*/
+/*Created on 2019.6.2*/
 #include "Rect_with_text.h"
 
 Rect_with_text::Rect_with_text(Point xy, int ww, int hh, const int s) : w(ww), h(hh), lab(to_string(s)), fnt(fl_font()), fnt_sz(fl_size())
