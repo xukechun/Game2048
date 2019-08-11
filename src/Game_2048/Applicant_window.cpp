@@ -1,3 +1,5 @@
+/*Author: Kechun Xu*/
+/*Created on 2019.6.2*/
 #include "Simple_window.h"
 #include "Window.h"
 #include "Game_2048/Applicant_window.h"
@@ -105,11 +107,11 @@ void Applicant_window::game3_pressed()     // "the usual"
 	Game_hard wingame(Point(400, 150), 700, 500, "2048");
 	//use_time.put(to_string(useTime));
 	wingame.wait_for_button();
-	//ShowBox* m_pTimeShowBox;//Ê±¼äÏÔÊ¾Æ÷
+	//ShowBox* m_pTimeShowBox;//æ—¶é—´æ˜¾ç¤ºå™¨
 	//m_pTimeShowBox = ShowBox::getInstance();
 	//m_pTimeShowBox->resize(0, 20, 50, timeShowBoxHeight);
 	//m_pTimeShowBox->showGrade(0);
 	//wingame.add(m_pTimeShowBox);
-	//wingame.begin();//Íù´°ÌåÀïÃæÌí¼Ó¶ÔÏó
+	//wingame.begin();//å¾€çª—ä½“é‡Œé¢æ·»åŠ å¯¹è±¡
 	//wingame.wait_for_button();
 }
